@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Relatório de Ensaios - Conexões PVC-U</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RELATÓRIO DE ENSAIOS – CONEXÕES DE PVC-U</h1>
+        </header>
+
+        <form id="reportForm">
+            <!-- 1. Identificação do Relatório -->
+            <section class="form-section">
+                <h2>1. Identificação do Relatório</h2>
+                <div class="form-row">
+                    <label>Número do Relatório: <input type="text" id="reportNumber" required></label>
+                    <label>Revisão: <input type="text" id="revision" required></label>
+                </div>
+                <div class="form-row">
+                    <label>Data de emissão: <input type="date" id="issueDate" required></label>
+                    <label>Responsável Técnico: <input type="text" id="technicalResponsible" required></label>
+                </div>
+                <div class="form-row">
+                    <label>Laboratório: <input type="text" id="laboratory" required></label>
+                </div>
+                <div class="form-row">
+                    <label>Normas de referência: 
+                        <textarea id="referenceNorms" readonly>ABNT NBR 5648:2018, NBR 8219, NBR NM 82, EN 62321-3-1:2014, NBR NM 84, NBR 8218, NBR 14264, NBR 7371.</textarea>
+                    </label>
+                </div>
+            </section>
+
+            <!-- 2. Identificação da Amostra -->
+            <section class="form-section">
+                <h2>2. Identificação da Amostra</h2>
+                <div class="form-row">
+                    <label>Descrição: <input type="text" id="description" required></label>
+                    <label>Tipo: <input type="text" id="type" required></label>
+                </div>
+                <div class="form-row">
+                    <label>Dimensão nominal: <input type="text" id="nominalDimension" required></label>
+                    <label>Cor: <input type="text" id="color" required></label>
+                </div>
+                <div class="form-row">
+                    <label>Processo de fabricação: <input type="text" id="manufacturingProcess" required></label>
+                    <label>Marca: <input type="text" id="brand" required></label>
+                </div>
+                <div class="form-row">
+                    <label>Lote/Número da amostra: <input type="text" id="sampleNumber" required></label>
+                    <label>Quantidade de amostras: <input type="number" id="sampleQuantity" required></label>
+                </div>
+            </section>
+
+            <!-- 3. Objetivo do Ensaio -->
+            <section class="form-section">
+                <h2>3. Objetivo do Ensaio</h2>
+                <textarea id="testObjective" readonly>O presente relatório tem por objetivo apresentar os resultados obtidos nos ensaios realizados em conexões de PVC-U, visando verificar a conformidade com os requisitos das normas técnicas aplicáveis.</textarea>
+            </section>
+
+            <!-- 4. Métodos e Materiais Empregados -->
+            <section class="form-section">
+                <h2>4. Métodos e Materiais Empregados</h2>
+                <ul class="methods-list">
+                    <li>Efeito sobre a água (Inocuidade) – ABNT NBR 8219</li>
+                    <li>Temperatura de amolecimento Vicat – ABNT NBR NM 82</li>
+                    <li>Presença de chumbo – EN 62321-3-1:2014</li>
+                    <li>Teor de cinzas – ABNT NBR NM 84</li>
+                    <li>Resistência à pressão hidrostática interna – ABNT NBR 8218</li>
+                    <li>Características geométricas – ABNT NBR 14264</li>
+                    <li>Desempenho da junta soldável – ABNT NBR 7371 (quando aplicável)</li>
+                </ul>
+            </section>
+
+            <!-- 5. Resultados dos Ensaios -->
+            <section class="form-section">
+                <h2>5. Resultados dos Ensaios</h2>
+                <div class="table-container">
+                    <table id="resultsTable">
+                        <thead>
+                            <tr>
+                                <th>Ensaio</th>
+                                <th>Resultado obtido</th>
+                                <th>Requisito normativo</th>
+                                <th>Conformidade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Efeito sobre a água (Inocuidade) – ABNT NBR 8219</td>
+                                <td><input type="text" name="result1"></td>
+                                <td><input type="text" name="requirement1"></td>
+                                <td>
+                                    <select name="compliance1">
+                                        <option value="">Selecione</option>
+                                        <option value="Conforme">Conforme</option>
+                                        <option value="Não Conforme">Não Conforme</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Temperatura de amolecimento Vicat – ABNT NBR NM 82</td>
+                                <td><input type="text" name="result2"></td>
+                                <td><input type="text" name="requirement2"></td>
+                                <td>
+                                    <select name="compliance2">
+                                        <option value="">Selecione</option>
+                                        <option value="Conforme">Conforme</option>
+                                        <option value="Não Conforme">Não Conforme</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Presença de chumbo – EN 62321-3-1:2014</td>
+                                <td><input type="text" name="result3"></td>
+                                <td><input type="text" name="requirement3"></td>
+                                <td>
+                                    <select name="compliance3">
+                                        <option value="">Selecione</option>
+                                        <option value="Conforme">Conforme</option>
+                                        <option value="Não Conforme">Não Conforme</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Teor de cinzas – ABNT NBR NM 84</td>
+                                <td><input type="text" name="result4"></td>
+                                <td><input type="text" name="requirement4"></td>
+                                <td>
+                                    <select name="compliance4">
+                                        <option value="">Selecione</option>
+                                        <option value="Conforme">Conforme</option>
+                                        <option value="Não Conforme">Não Conforme</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Resistência à pressão hidrostática interna – ABNT NBR 8218</td>
+                                <td><input type="text" name="result5"></td>
+                                <td><input type="text" name="requirement5"></td>
+                                <td>
+                                    <select name="compliance5">
+                                        <option value="">Selecione</option>
+                                        <option value="Conforme">Conforme</option>
+                                        <option value="Não Conforme">Não Conforme</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Características geométricas – ABNT NBR 14264</td>
+                                <td><input type="text" name="result6"></td>
+                                <td><input type="text" name="requirement6"></td>
+                                <td>
+                                    <select name="compliance6">
+                                        <option value="">Selecione</option>
+                                        <option value="Conforme">Conforme</option>
+                                        <option value="Não Conforme">Não Conforme</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Desempenho da junta soldável – ABNT NBR 7371</td>
+                                <td><input type="text" name="result7"></td>
+                                <td><input type="text" name="requirement7"></td>
+                                <td>
+                                    <select name="compliance7">
+                                        <option value="">Selecione</option>
+                                        <option value="Conforme">Conforme</option>
+                                        <option value="Não Conforme">Não Conforme</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 6. Discussão dos Resultados -->
+            <section class="form-section">
+                <h2>6. Discussão dos Resultados</h2>
+                <textarea id="resultsDiscussion" placeholder="Análise comparativa entre os resultados obtidos e os critérios estabelecidos nas normas de referência."></textarea>
+            </section>
+
+            <!-- 7. Conclusão -->
+            <section class="form-section">
+                <h2>7. Conclusão</h2>
+                <div class="conclusion-container">
+                    <p>Com base nos resultados obtidos, conclui-se que a amostra está:</p>
+                    <label class="radio-label">
+                        <input type="radio" name="finalConclusion" value="Conforme" id="conforme">
+                        <span>Conforme</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="finalConclusion" value="Não Conforme" id="naoConforme">
+                        <span>Não Conforme</span>
+                    </label>
+                    <p>com as normas de referência.</p>
+                </div>
+            </section>
+
+            <!-- 8. Anexos -->
+            <section class="form-section">
+                <h2>8. Anexos</h2>
+                <div class="attachments">
+                    <label>
+                        <input type="checkbox" id="calibrationCerts">
+                        Certificados de calibração dos equipamentos
+                    </label>
+                    <label>
+                        <input type="checkbox" id="testSheets">
+                        Planilhas e gráficos dos ensaios
+                    </label>
+                    <label>
+                        <input type="checkbox" id="samplePhotos">
+                        Fotografias das amostras
+                    </label>
+                </div>
+            </section>
+
+            <div class="form-actions">
+                <button type="button" id="generateReport">Gerar Relatório</button>
+                <button type="button" id="printReport">Imprimir</button>
+                <button type="reset">Limpar Formulário</button>
+            </div>
+        </form>
+
+        <div id="reportOutput" class="report-output" style="display: none;">
+            <!-- Generated report will appear here -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
